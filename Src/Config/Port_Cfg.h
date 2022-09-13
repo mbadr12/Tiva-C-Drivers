@@ -2,22 +2,17 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  IntCtrl.h
- *       Module:  IntCtrl
+ *         File:  Port_Cfg.h
+ *       Module:  Port
  *
- *  Description:  header File for interfacing   
+ *  Description:  H File to set Configurations    
  *  
  *********************************************************************************************************************/
-#ifndef INTCRTL_H_
-#define INTCRTL_H_
-
-#define SCB_VECTKEY					0x05FA0000UL
-
-#define SCB_8_GPR_1_SUB_PR			4
-#define SCB_4_GPR_2_SUB_PR			5
-#define SCB_2_GPR_4_SUB_PR			6
-#define SCB_1_GPR_8_SUB_PR			7
-
-void IntCtr_Init(void);
-
+ 
+#ifndef PORT_CFG_H_
+#define PORT_CFG_H_
+ 
+#define CNFGED_PINS_NUM			3
+ 
+ 
 #endif

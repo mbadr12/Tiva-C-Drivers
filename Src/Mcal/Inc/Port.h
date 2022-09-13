@@ -2,22 +2,20 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  IntCtrl.h
- *       Module:  IntCtrl
+ *         File:  Port.h
+ *       Module:  Port
  *
  *  Description:  header File for interfacing   
  *  
  *********************************************************************************************************************/
-#ifndef INTCRTL_H_
-#define INTCRTL_H_
+ 
+#ifndef PORT__H_
+#define PORT__H_
 
-#define SCB_VECTKEY					0x05FA0000UL
+#define GPIO_PORT_NUM				6
+	
+#define GPIO_ACTIVE_AHB_BUS			0x3f
 
-#define SCB_8_GPR_1_SUB_PR			4
-#define SCB_4_GPR_2_SUB_PR			5
-#define SCB_2_GPR_4_SUB_PR			6
-#define SCB_1_GPR_8_SUB_PR			7
-
-void IntCtr_Init(void);
+void Port_Init(void);
 
 #endif

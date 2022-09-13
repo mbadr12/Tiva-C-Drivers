@@ -2,22 +2,24 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  IntCtrl.h
- *       Module:  IntCtrl
+ *         File:  Port.h
+ *       Module:  Port
  *
  *  Description:  header File for interfacing   
  *  
  *********************************************************************************************************************/
-#ifndef INTCRTL_H_
-#define INTCRTL_H_
+ 
+#ifndef DIO_H_
+#define DIO_H_
 
-#define SCB_VECTKEY					0x05FA0000UL
+DIO_LevelType DIO_ReadPort(GPIO_Port_t port_Num);
 
-#define SCB_8_GPR_1_SUB_PR			4
-#define SCB_4_GPR_2_SUB_PR			5
-#define SCB_2_GPR_4_SUB_PR			6
-#define SCB_1_GPR_8_SUB_PR			7
+DIO_LevelType DIO_ReadPIN(GPIO_Port_t port_Num , GPIO_pin_t Pin_Num);
 
-void IntCtr_Init(void);
+void DIO_SetPortValue(GPIO_Port_t port_Num, DIO_LevelType Value);
+
+void DIO_SetPinValue(GPIO_Port_t port_Num , GPIO_pin_t Pin_Num , GPIO_pinState_t Value);
+
+void DIO_TogglePinValue(GPIO_Port_t port_Num , GPIO_pin_t Pin_Num);
 
 #endif
