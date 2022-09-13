@@ -46,12 +46,12 @@ typedef struct
 
 /******************************************** GPIO Peripheral Definition *********************************************/
 
-#define GPIOA_BASE_ADDRESS					0x40004000UL
+#define GPIOA_BASE_ADDRESS					0x40058000UL
 #define GPIOB_BASE_ADDRESS					0x40059000UL
 #define GPIOC_BASE_ADDRESS					0x4005A000UL
 #define GPIOD_BASE_ADDRESS					0x4005B000UL
 #define GPIOE_BASE_ADDRESS					0x4005C000UL
-#define GPIOF_BASE_ADDRESS					0x40025000UL
+#define GPIOF_BASE_ADDRESS					0x4005D000UL
 
 
 /******************************************** GPIO Registers Definition **********************************************/

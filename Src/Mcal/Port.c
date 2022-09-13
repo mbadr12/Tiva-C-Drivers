@@ -26,7 +26,7 @@ void Port_Init(void)
 {
 	uint8 iterator=0;
 	/*1- Activate the AHB Bus of GPIO From System Control*/
-	//SC_GPIOHBCTL = GPIO_ACTIVE_AHB_BUS;
+	SC_GPIOHBCTL = GPIO_ACTIVE_AHB_BUS;
 	for(iterator=0; iterator < CNFGED_PINS_NUM ; iterator++)
 	{
 		/*2- open Clock on the port*/

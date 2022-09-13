@@ -15,8 +15,6 @@
 
 #include "DIO.h"
 
-#define Bit_Band_Reg(Addr,Bit)     ( ((Addr) & 0xF0000000) + 0x2000000 + (((Addr) &0xFFFFF) << 5) + ((Bit)<<2) )
-
 extern GPIO_RegDef_t* GPIO_PortArr[6];
 
 DIO_LevelType DIO_ReadPort(GPIO_Port_t port_Num)
