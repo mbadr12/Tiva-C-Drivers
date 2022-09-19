@@ -24,7 +24,11 @@
  *5- OutputCurrent: The Output Current of Pin
  *6- AltFunc: the AltFun Number If the Pin is In Alternative Function Mode*/
 
-GPIO_PinConfig_t Config_ports[CNFGED_PINS_NUM]={{GPIO_PORTA,GPIO_PIN0,GPIO_PIN_OUTPUT,GPIO_OPENDRAIN,GPIO_2MA_DRIVE,GPIO_DONT_CARE},
-												{GPIO_PORTC,GPIO_PIN3,GPIO_PIN_INPUT,GPIO_PULLUP,GPIO_DONT_CARE,GPIO_DONT_CARE},
-												{GPIO_PORTF,GPIO_PIN5,GPIO_PIN_OUTPUT,GPIO_DONT_CARE,GPIO_2MA_DRIVE,GPIO_DONT_CARE}};
+GPIO_PinConfig_t Config_ports[CNFGED_PINS_NUM]={
+							{GPIO_PORTF,
+							GPIO_PIN1,
+							GPIO_PIN_OUTPUT,
+							GPIO_DONT_CARE,
+							GPIO_2MA_DRIVE,
+							GPIO_DONT_CARE}};
 												

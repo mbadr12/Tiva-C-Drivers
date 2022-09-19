@@ -8,20 +8,29 @@
  *  Description:  C File to Impelement the Function    
  *  
  *********************************************************************************************************************/
- #include "Platform_Types.h"
- #include "Std_Types.h"
- #include "Mcu_Hw.h"
- 
- #include "IntCtrl.h"
- #include "IntCtrl_Cfg.h"
- 
- extern NVIC_Config_t NVIC_Arr[NVIC_Activate_Peripherals_NUM];
- extern uint8 SCB_GRP_SUB_PR;
- 
- void IntCtr_Init(void)
- {
-	 	 /*1- determine number of bits for GRP Priority and Sub Priority*/
-		SCB_APINT = (SCB_VECTKEY | (SCB_GRP_SUB_PR<<8));
+#include "Platform_Types.h"
+#include "Std_Types.h"
+#include "Mcu_Hw.h"
+
+#include "IntCtrl.h"
+#include "IntCtrl_Cfg.h"
+
+extern NVIC_Config_t NVIC_Arr[NVIC_Activate_Peripherals_NUM];
+extern uint8 SCB_GRP_SUB_PR;
+
+/******************************************************************************
+ * Syntax          : IntCtr_Init(void) 
+ * Description     : Initialize the interrupt sources with the user requirment
+ * Sync\Async      : Synchronous
+ * Reentrancy      : Reentrant
+ * Parameters (in) : None
+ * Parameters (out): None
+ * Return value:   : void
+ *******************************************************************************/
+void IntCtr_Init(void)
+{
+	/*1- determine number of bits for GRP Priority and Sub Priority*/
+	SCB_APINT = (SCB_VECTKEY | (SCB_GRP_SUB_PR<<8));
 	for(uint8 itrator=0 ; itrator < NVIC_Activate_Peripherals_NUM ; itrator++)
 	{
 	 /*2- determine the GRP Priority and Sub Priority*/

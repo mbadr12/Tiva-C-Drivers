@@ -20,7 +20,6 @@
  *3- Sub_PR: The Sub priority of Peripheral*/
 
 NVIC_Config_t NVIC_Arr[NVIC_Activate_Peripherals_NUM]={{GPIOA_Handler,2,0},
-													   {GPIOF_Handler, 0,1},
 													   {UART6_Handler,1,1}};
 										 
 /*Choose the Configuration of Group and sub priority:

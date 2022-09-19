@@ -18,6 +18,15 @@
 #define SCB_2_GPR_4_SUB_PR			6
 #define SCB_1_GPR_8_SUB_PR			7
 
+/******************************************************************************
+ * Syntax          : IntCtr_Init(void) 
+ * Description     : Initialize the interrupt sources with the user requirment
+ * Sync\Async      : Synchronous
+ * Reentrancy      : Reentrant
+ * Parameters (in) : None
+ * Parameters (out): None
+ * Return value:   : void
+ *******************************************************************************/
 void IntCtr_Init(void);
 
 #endif

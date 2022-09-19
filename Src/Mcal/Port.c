@@ -1,5 +1,5 @@
 /**********************************************************************************************************************
-
+ *
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *         File:  Port.c
@@ -22,16 +22,23 @@ GPIO_RegDef_t* GPIO_PortArr[GPIO_PORT_NUM]={GPIOA ,GPIOB ,GPIOC ,GPIOD ,GPIOE ,G
 
 extern GPIO_PinConfig_t Config_ports[CNFGED_PINS_NUM];
 
+/******************************************************************************
+ * Syntax          : Port_Init(void) 
+ * Description     : Initialize the pin with the user requirment
+ * Sync\Async      : Synchronous
+ * Reentrancy      : Reentrant
+ * Parameters (in) : None
+ * Parameters (out): None
+ * Return value:   : void
+ *******************************************************************************/
 void Port_Init(void)
 {
 	uint8 iterator=0;
-	/*1- Activate the AHB Bus of GPIO From System Control*/
-	SC_GPIOHBCTL = GPIO_ACTIVE_AHB_BUS;
 	for(iterator=0; iterator < CNFGED_PINS_NUM ; iterator++)
 	{
-		/*2- open Clock on the port*/
+		/*1- open Clock on the port*/
 		RC_RCGCGPIO |= 1<<(Config_ports[iterator].Port);
-		/*3- Choose The Mode of the Pin*/
+		/*2- Choose The Mode of the Pin*/
 		switch(Config_ports[iterator].Mode)
 		{
 			case GPIO_PIN_INPUT:
@@ -57,7 +64,7 @@ void Port_Init(void)
 			case GPIO_PIN_ANALOG:
 			(GPIO_PortArr[Config_ports[iterator].Port])->GPIOAMSEL |= (1<< (Config_ports[iterator].Pin)); break;
 		}
-		/*4- Choose The Pin Pull Up Down State*/
+		/*3- Choose The Pin Pull Up Down State*/
 		switch(Config_ports[iterator].PullUpDown)
 		{
 			case GPIO_OPENDRAIN:

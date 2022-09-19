@@ -12,7 +12,7 @@
 #ifndef PORT_CFG_H_
 #define PORT_CFG_H_
  
-#define CNFGED_PINS_NUM			3
+#define CNFGED_PINS_NUM			1
  
  
 #endif

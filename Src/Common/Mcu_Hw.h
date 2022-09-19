@@ -18,6 +18,8 @@
 
 #define RC_RCGCGPIO								*((volatile uint32*)(SC_BASE_ADDRESS+0x608))
 
+#define SC_RCGCWD								*((volatile uint32*)(SC_BASE_ADDRESS+0x600))
+
 /******************************************** NVIC Peripheral Definition *********************************************/
 
 #define NVIC_BASE_ADDRESS						0xE000E100UL
@@ -46,12 +48,12 @@ typedef struct
 
 /******************************************** GPIO Peripheral Definition *********************************************/
 
-#define GPIOA_BASE_ADDRESS					0x40058000UL
-#define GPIOB_BASE_ADDRESS					0x40059000UL
-#define GPIOC_BASE_ADDRESS					0x4005A000UL
-#define GPIOD_BASE_ADDRESS					0x4005B000UL
-#define GPIOE_BASE_ADDRESS					0x4005C000UL
-#define GPIOF_BASE_ADDRESS					0x4005D000UL
+#define GPIOA_BASE_ADDRESS					0x40004000UL
+#define GPIOB_BASE_ADDRESS					0x40005000UL
+#define GPIOC_BASE_ADDRESS					0x40006000UL
+#define GPIOD_BASE_ADDRESS					0x40007000UL
+#define GPIOE_BASE_ADDRESS					0x40024000UL
+#define GPIOF_BASE_ADDRESS					0x40025000UL
 
 
 /******************************************** GPIO Registers Definition **********************************************/
@@ -90,5 +92,21 @@ typedef struct
 #define GPIOD                           ((GPIO_RegDef_t*) GPIOD_BASE_ADDRESS)
 #define GPIOE                           ((GPIO_RegDef_t*) GPIOE_BASE_ADDRESS)
 #define GPIOF                           ((GPIO_RegDef_t*) GPIOF_BASE_ADDRESS)
+
+
+/******************************************** SysTick Peripheral Definition *********************************************/
+
+#define STK_BASE_ADDRESS						0xE000E010UL
+
+/******************************************** SysTick Registers Definition **********************************************/
+
+typedef struct
+{
+	volatile uint32 STCTRL;						/*SysTick Control and Status Register*/
+	volatile uint32 STRELOAD;                   /*SysTick Reload Value Register*/
+	volatile uint32 STCURRENT;                  /*SysTick Current Value Register*/
+}STK_RegDef_t;
+
+#define STK								((STK_RegDef_t*) STK_BASE_ADDRESS)		
 
 #endif  /* MCU_HW_H */

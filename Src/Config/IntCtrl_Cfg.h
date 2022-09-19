@@ -13,6 +13,6 @@
 #define INTCRTL_CFG_H_
 
 /*The Number of Peripherals you want to activate*/
-#define NVIC_Activate_Peripherals_NUM		3
+#define NVIC_Activate_Peripherals_NUM		2
 
 #endif

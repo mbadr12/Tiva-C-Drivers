@@ -16,6 +16,15 @@
 	
 #define GPIO_ACTIVE_AHB_BUS			0x3f
 
+/******************************************************************************
+ * Syntax          : Port_Init(void) 
+ * Description     : Initialize the pin with the user requirment
+ * Sync\Async      : Synchronous
+ * Reentrancy      : Reentrant
+ * Parameters (in) : None
+ * Parameters (out): None
+ * Return value:   : void
+ *******************************************************************************/
 void Port_Init(void);
 
 #endif
